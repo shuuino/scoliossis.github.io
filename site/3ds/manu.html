@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manu</title>
+  <link rel="icon" href="https://www.leagueoflegends.com/static/favicon-0cf29ce019f7cd1b5f8f.ico">
+  <style> 
+  /*importing from local files, since an external link might kill it / take forever (the 3ds is weird like that)*/
+    @font-face {
+      font-family: 'Inter';
+      font-weight: 400;
+      src: url('fonts/static/Inter_18pt-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-weight: 500;
+      src: url('fonts/static/Inter_18pt-Medium.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-weight: 600;
+      src: url('fonts/static/Inter_18pt-SemiBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-weight: 700;
+      src: url('fonts/static/Inter_18pt-Bold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-weight: 800;
+      src: url('fonts/static/Inter_18pt-ExtraBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-weight: 400;
+      src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-weight: 600;
+      src: url('fonts/JetBrainsMono-SemiBold.ttf') format('truetype');
+    }
+
+    /* ===== BODY (GREY BACKGROUND) ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1b1b1b;
+      font-family: 'Inter', sans-serif;
+      color: #e5e5e5;
+      text-align: center;
+    }
+
+
+    /* ===== HUD FRAME (clean grey lines) ===== */
+    .hud-frame {
+      position: absolute;
+      inset: 28px;
+      z-index: 1;
+      border: 1px solid rgba(255,255,255,0.08);
+     pointer-events: none;
+    }
+
+    .wrap {
+      display: table;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0; left: 0;
+    }
+
+    .wrap-inner {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    /* ===== CARD (CLEAN GLASS GREY) ===== */
+    .card {
+      display: inline-block;
+      width: 280px;
+      padding: 20px;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      -webkit-border-radius: 18px;
+      border-radius: 18px;
+    }
+
+    /* ===== PROFILE ===== */
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border: 2px solid #555;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+    }
+
+    .name-row {
+      margin: 10px 0 2px;
+    }
+
+    .name-text {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 28px;
+      font-weight: 800;
+      color: #f2f2f2;
+    }
+
+    .tag {
+      display: inline-block;
+      vertical-align: middle;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: #a78bfa;
+      border: 1px solid #7c3aed;
+      padding: 3px 7px;
+      -webkit-border-radius: 999px;
+      border-radius: 999px;
+      margin-left: 8px;
+    }
+
+    .title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #b0b0b0;
+      margin: 0 0 10px;
+    }
+
+    .bio {
+      font-size: 13px;
+      color: #cfcfcf;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #3a3a3a;
+      border: 1px solid #555;
+      -webkit-border-radius: 999px;
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .marquee-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #141414;
+      border-top: 1px solid #333;
+      padding: 6px 0;
+      overflow: hidden;
+    }
+
+    .marquee-text {
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #aaa;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="hud-frame"></div>
+  <div class="wrap">
+    <div class="wrap-inner">
+      <div class="card">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1AnAvOd2WSj1bznZ_WsFLrkNZvcPSpB6dUg&s"
+          class="profile-img"
+          alt="profile"
+        ><br>
+        <div class="name-row">
+          <span class="name-text">Manu</span><span class="tag">ci.cancel();</span>
+        </div>
+        <p class="title">Java Enthusiast &bull; League Enjoyer</p>
+        <p class="bio">
+          top notch player<br>
+          hidden challenger<br>
+          Scale's hidden son
+        </p>
+        <a href="https://github.com/Tanklastwagenfahrer" class="btn" target="_blank">Github</a>
+        <!--For (what I hope are) obvious reasons, I didn't include that long ass svg button-->
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee-bar">
+    <!-- <marquee> is deprecated but natively supported in old WebKit — no vw units needed -->
+    <marquee class="marquee-text" behavior="scroll" direction="left" scrollamount="3">pee enjoyer ✌️✌️✌️</marquee>
+  </div>
+  <!--no spear, obv-->
+</body>
+</html>
