@@ -8,14 +8,22 @@
 </head>
 <body>
   <!--no background container, I could've tried making it work but I doubt spending hours to get a half-working example is worth it-->
-  <div class="wrap">
-    <div class="wrap-inner">
+  <!-- TOP SCREEN (0–240px): decorative banner -->
+  <div class="top-screen">
+    <div class="top-inner">
+      <div class="site-label">dragonwarriorp.ee</div>
+      <div class="site-sub">filler text</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM SCREEN (240–480px): card -->
+  <div class="bottom-screen">
+    <div class="bottom-inner">
       <div class="card">
-        <a href="../images/scale.jpg">
-          <img src="../images/scale.jpg" alt="dragonwarriorpee" class="pfp">
-        </a><br>
+        <!--clicking on image wouldn't work (image would fail to load), maybe because the image is too big? whatever, removed feature-->
+        <img src="../images/scale.jpg" alt="scale" class="pfp">
         <h1>scale</h1>
-        <p class="paragraph">paragraph goes here yipper yapper yipper yapper, hi hello, am i mutted, is this thing on?</p>
+        <p class="paragraph">hi hello, am i muted, is this thing on?</p>
       </div>
     </div>
   </div>

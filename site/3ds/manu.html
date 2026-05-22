@@ -4,28 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manu</title>
+  <!--tell manu his icon resolves to a 404
+  absolute intelligence-->
   <link rel="icon" href="https://www.leagueoflegends.com/static/favicon-0cf29ce019f7cd1b5f8f.ico">
-  <style> 
-  /*importing from local files, since an external link might kill it / take forever (the 3ds is weird like that)*/
+  <style>
+    /*importing from local files, since an external link might kill it / take forever (the 3ds is weird like that)*/
     @font-face {
       font-family: 'Inter';
       font-weight: 400;
       src: url('fonts/static/Inter_18pt-Regular.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'Inter';
-      font-weight: 500;
-      src: url('fonts/static/Inter_18pt-Medium.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'Inter';
-      font-weight: 600;
-      src: url('fonts/static/Inter_18pt-SemiBold.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'Inter';
-      font-weight: 700;
-      src: url('fonts/static/Inter_18pt-Bold.ttf') format('truetype');
     }
     @font-face {
       font-family: 'Inter';
@@ -43,161 +30,165 @@
       src: url('fonts/JetBrainsMono-SemiBold.ttf') format('truetype');
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     /* ===== BODY (GREY BACKGROUND) ===== */
     body {
-      margin: 0;
-      padding: 0;
       background: #1b1b1b;
       font-family: 'Inter', sans-serif;
       color: #e5e5e5;
       text-align: center;
+      width: 320px;
     }
 
-
-    /* ===== HUD FRAME (clean grey lines) ===== */
-    .hud-frame {
-      position: absolute;
-      inset: 28px;
-      z-index: 1;
-      border: 1px solid rgba(255,255,255,0.08);
-     pointer-events: none;
-    }
-
-    .wrap {
+    /* TOP SCREEN */
+    .top-screen {
+      height: 240px;
+      background: #111;
+      border-bottom: 1px solid #333;
       display: table;
       width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0; left: 0;
     }
 
-    .wrap-inner {
+    .top-inner {
       display: table-cell;
       vertical-align: middle;
       text-align: center;
     }
 
-    /* ===== CARD (CLEAN GLASS GREY) ===== */
-    .card {
-      display: inline-block;
-      width: 280px;
-      padding: 20px;
-      background: #2a2a2a;
-      border: 1px solid #444;
-      -webkit-border-radius: 18px;
-      border-radius: 18px;
-    }
-
-    /* ===== PROFILE ===== */
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      border: 2px solid #555;
-      -webkit-border-radius: 50%;
-      border-radius: 50%;
-    }
-
-    .name-row {
-      margin: 10px 0 2px;
-    }
-
-    .name-text {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 28px;
+    .top-name {
+      font-size: 32px;
       font-weight: 800;
       color: #f2f2f2;
+      letter-spacing: 1px;
     }
 
-    .tag {
-      display: inline-block;
-      vertical-align: middle;
+    .top-tag {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 11px;
       color: #a78bfa;
       border: 1px solid #7c3aed;
-      padding: 3px 7px;
+      padding: 3px 8px;
       -webkit-border-radius: 999px;
       border-radius: 999px;
-      margin-left: 8px;
+      display: inline-block;
+      margin-top: 8px;
     }
 
-    .title {
+    .top-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: #b0b0b0;
-      margin: 0 0 10px;
+      font-size: 11px;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    /* BOTTOM SCREEN */
+    .bottom-screen {
+      height: 240px;
+      background: #1b1b1b;
+      display: table;
+      width: 100%;
+    }
+
+    .bottom-inner {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .card {
+      display: inline-block;
+      width: 240px;
+      padding: 12px 16px;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      -webkit-border-radius: 16px;
+      border-radius: 16px;
+    }
+
+    .profile-img {
+      width: 64px;
+      height: 64px;
+      border: 2px solid #555;
+      /* full -webkit- prefix for 3DS WebKit */
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      /* force circular clip on old WebKit */
+      overflow: hidden;
+      display: block;
+      margin: 0 auto;
     }
 
     .bio {
-      font-size: 13px;
+      font-size: 12px;
       color: #cfcfcf;
-      line-height: 1.6;
-      margin-bottom: 14px;
+      line-height: 1.5;
+      margin: 8px 0 10px;
     }
 
     .btn {
       display: inline-block;
-      padding: 8px 16px;
+      padding: 6px 14px;
       background: #3a3a3a;
       border: 1px solid #555;
       -webkit-border-radius: 999px;
       border-radius: 999px;
       color: #fff;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
     }
 
     .marquee-bar {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
       background: #141414;
       border-top: 1px solid #333;
-      padding: 6px 0;
+      padding: 5px 0;
       overflow: hidden;
     }
 
     .marquee-text {
       white-space: nowrap;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
+      font-size: 10px;
       color: #aaa;
       display: inline-block;
     }
   </style>
 </head>
 <body>
-  <div class="hud-frame"></div>
-  <div class="wrap">
-    <div class="wrap-inner">
+
+  <!-- TOP SCREEN: name, tag, title -->
+  <div class="top-screen">
+    <div class="top-inner">
+      <div class="top-name">Manu</div>
+      <div class="top-tag">ci.cancel();</div>
+      <div class="top-title">Java Enthusiast &bull; League Enjoyer</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM SCREEN: pfp, bio, button -->
+  <div class="bottom-screen">
+    <div class="bottom-inner">
       <div class="card">
+        <!-- placeholder img <3 (previous one wouldn't load) -->
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1AnAvOd2WSj1bznZ_WsFLrkNZvcPSpB6dUg&s"
+          src="https://avatars.githubusercontent.com/u/583231"
           class="profile-img"
-          alt="profile"
-        ><br>
-        <div class="name-row">
-          <span class="name-text">Manu</span><span class="tag">ci.cancel();</span>
-        </div>
-        <p class="title">Java Enthusiast &bull; League Enjoyer</p>
+          alt="Manu"
+        >
         <p class="bio">
           top notch player<br>
           hidden challenger<br>
           Scale's hidden son
         </p>
-        <a href="https://github.com/Tanklastwagenfahrer" class="btn" target="_blank">Github</a>
-        <!--For (what I hope are) obvious reasons, I didn't include that long ass svg button-->
+        <a href="https://github.com/Tanklastwagenfahrer" class="btn">Github</a>
       </div>
     </div>
   </div>
 
   <div class="marquee-bar">
-    <!-- <marquee> is deprecated but natively supported in old WebKit — no vw units needed -->
-    <marquee class="marquee-text" behavior="scroll" direction="left" scrollamount="3">pee enjoyer ✌️✌️✌️</marquee>
+    <marquee class="marquee-text" behavior="scroll" direction="left" scrollamount="3">pee enjoyer</marquee> <!--emojis wouldn't work for whatever goddamned reason, i'll figure it out: never-->
   </div>
-  <!--no spear, obv-->
+
 </body>
 </html>
