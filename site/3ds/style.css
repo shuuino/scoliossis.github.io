@@ -4,45 +4,15 @@ body {
   font-family: sans-serif;
   text-align: center;
   background: #111;
-  width: 320px; /* 3DS bottom screen width */
+  width: 320px;
 }
 
-/* TOP SCREEN — shown on upper display (240px tall) */
-.top-screen {
-  width: 400px; /* 3DS top screen is wider */
-  margin: 0 auto;
-  height: 240px;
-  background-image: -webkit-linear-gradient(top, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
-  background-image: linear-gradient(to bottom, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
-  display: table;
-  width: 100%;
-}
-
-.top-inner {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.site-label {
-  font-size: 28px;
-  font-weight: bold;
-  color: #222;
-  letter-spacing: 1px;
-}
-
-.site-sub {
-  font-size: 13px;
-  color: #444;
-  margin-top: 6px;
-}
-
-/* BOTTOM SCREEN — shown on lower touch display (240px tall, 320px wide) */
+/* BOTTOM SCREEN — first in DOM, shown on touch screen on load */
 .bottom-screen {
   height: 240px;
   background: #111;
   display: table;
-  width: 100%;
+  width: 320px;
 }
 
 .bottom-inner {
@@ -79,4 +49,36 @@ h1 {
   color: #ccc;
   margin: 0;
   line-height: 1.4;
+}
+
+/* TOP SCREEN — second in DOM, shown on upper display */
+.top-screen {
+  height: 240px;
+  width: 320px;
+  /* gradient inline-style fallback if CSS file fails; also declared here */
+  /* no idea if ts is gonna work tbh*/
+  background: #F5A9B8;
+  /* no background-attachment:fixed — breaks on 3DS WebKit */
+  background-image: -webkit-linear-gradient(top, #5BCEFA 0%, #F5A9B8 35%, #FFFFFF 50%, #F5A9B8 65%, #5BCEFA 100%);
+  background-image: linear-gradient(to bottom, #5BCEFA 0%, #F5A9B8 35%, #FFFFFF 50%, #F5A9B8 65%, #5BCEFA 100%);
+  display: table;
+}
+
+.top-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.site-label {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.site-sub {
+  font-size: 12px;
+  color: #444;
+  margin-top: 6px;
 }
